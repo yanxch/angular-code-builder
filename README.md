@@ -30,7 +30,7 @@ function sharksAreComing() {{'{'}}
 ```
 
 ### How does it work?
-We are using a Angular Schematics to configure a custom webpack loader for `html` in which we search for `<code>` element and do the escaping automatically.
+We are using a Angular Schematics to configure a custom webpack loader for `html` in which we search for `<code>` elements and do the escaping automatically.
 
 For the custom webpack configuration we use the custom webpack builder: https://www.npmjs.com/package/@angular-builders/custom-webpack
 
