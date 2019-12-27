@@ -1,5 +1,5 @@
 # Angular Code Builder
-[![Version](https://img.shields.io/npm/v/angular-kawaii.svg?style=flat-square)](https://www.npmjs.com/package/angular-code-builder)
+[![Version](https://img.shields.io/npm/v/angular-code-builder.svg?style=flat-square)](https://www.npmjs.com/package/angular-code-builder)
 ![npm](https://img.shields.io/npm/dt/angular-code-builder.svg)
 
 Write `<code><code>` in Angular templates in a declarartive way without caring about escaping special characters.
