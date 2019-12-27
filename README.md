@@ -2,7 +2,7 @@
 
 Write `<code><code>` in Angular templates in a declarartive way without caring about escaping special characters.
 
-Usually in Angular templates you have to escape braces like `{` to `{{'{'}}` and `}` to `{{'}'}}` in the template, otherwise Angular throws an error.
+Usually in Angular templates you have to escape braces like `{` to `{{'{'}}` and `}` to `{{'}'}}`, otherwise the Angular compiler throws an error.
 
 The **Angular Code Builder** does this "annoying" escaping for you, at build time. 
 
@@ -33,3 +33,4 @@ function sharksAreComing() {{'{'}}
 We are using a Angular Schematics to configure a custom webpack loader for `html` in which we search for `<code>` element and do the escaping automatically.
 
 For the custom webpack configuration we use the custom webpack builder: https://www.npmjs.com/package/@angular-builders/custom-webpack
+
