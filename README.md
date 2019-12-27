@@ -4,7 +4,10 @@
 
 Write `<code><code>` in Angular templates in a declarartive way without caring about escaping special characters.
 
-Usually in Angular templates you have to escape braces like `{` to `{{'{'}}` and `}` to `{{'}'}}`, otherwise the Angular compiler throws an error.
+Usually in Angular templates you have to escape braces like `{` to `{{'{'}}` and `}` to `{{'}'}}`, otherwise the Angular compiler throws an error: 
+```
+Unexpected character "EOF" (Do you have an unescaped "{" in your template? Use "{{ '{' }}") to escape it.) 
+```
 
 The **Angular Code Builder** does this "annoying" escaping for you, at build time. 
 
@@ -36,3 +39,12 @@ We are using a Angular Schematics to configure a custom webpack loader for `html
 
 For the custom webpack configuration we use the custom webpack builder: https://www.npmjs.com/package/@angular-builders/custom-webpack
 
+### Configuration
+When you want to use a custom Angular component that wraps your code and for example does use prism to highlight your code you can configure the element tag on which we match in `angular-code-builder/escapeBraces.js`: 
+```
+default:
+const MATCH_BLOG_CODES = /(<code(.*?)>)([\s\S]*?)(<\/code>)/g;
+
+change it if necessary;
+const MATCH_BLOG_CODES = /(<blog-code(.*?)>)([\s\S]*?)(<\/blog-code>)/g;
+```

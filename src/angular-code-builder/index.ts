@@ -49,7 +49,7 @@ function getProject(options: any, workspace: WorkspaceSchema) {
 
 function addWebpackOption(options: any, context: SchematicContext) {
   if (options.customWebpackConfig) {
-    context.logger.warn(`You are already using a customWebpackConfig in your angular.json. \nWe copied all necessary files to the angular-code folder in the root of your project. \nTake a look at the angular-code.webpack.js configuration and merge it with the existing webpack configuration manually. \nThat should be the only thing you'll have to do manually, all other configuration steps are already done.\n\n`);
+    context.logger.warn(`You are already using a customWebpackConfig in your angular.json. \nWe copied all necessary files to the angular-code-builder folder in the root of your project. \nTake a look at the angular-code-builder.webpack.js configuration and merge it with the existing webpack configuration manually. \nThat should be the only thing you'll have to do manually, all other configuration steps are already done.\n\n`);
   } else {
     options.customWebpackConfig = {
       path: 'angular-code-builder/angular-code-builder.webpack.js'
