@@ -2,6 +2,10 @@
   "name": "angular-code-builder",
   "version": "0.0.5",
   "description": "Angular Code Builder helps writing delarative code block in your view",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanxch/angular-code-builer.git"
+  },
   "ng-add": {
     "save": "devDependencies"
   },
