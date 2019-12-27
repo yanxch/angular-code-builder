@@ -1,28 +1,35 @@
-# Getting Started With Schematics
+# Angular Code Builder
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+Write `<code><code>` in Angular templates in a declarartive way without caring about escaping special characters.
 
-### Testing
+Usually in Angular templates you have to escape braces like `{` to `{{'{'}}` and `}` to `{{'}'}}` in the template, otherwise Angular throws an error.
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+The **Angular Code Builder** does this "annoying" escaping for you, at build time. 
 
-Check the documentation with
+### Usage
 ```bash
-schematics --help
+ng add angular-code-builder
 ```
 
-### Unit Testing
-
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
-
-### Publishing
-
-To publish, simply do:
-
-```bash
-npm run build
-npm publish
+Then you should be able to write code parts directly in your template file: 
+```html
+<pre><code>
+function sharksAreComing() {
+  console.log('Shark is coming..');
+}
+</code><pre>
 ```
 
-That's it!
- #Angular Code Builder
+Without Angular Code Builder you would have to write: 
+```html
+<pre><code>
+function sharksAreComing() {{'{'}}
+  console.log('Shark is coming..');
+{{'}'}}
+</code><pre>
+```
+
+### How does it work?
+We are using a Angular Schematics to configure a custom webpack loader for `html` in which we search for `<code>` element and do the escaping automatically.
+
+For the custom webpack configuration we use the custom webpack builder: https://www.npmjs.com/package/@angular-builders/custom-webpack
